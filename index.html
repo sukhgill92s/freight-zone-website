@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Freight Zone Transportation Inc — Trucking & Freight Services | Brampton, ON</title>
+<meta name="description" content="Freight Zone Transportation Inc — Brampton-based trucking company offering long-haul, cross-border (Canada–USA) and local freight services. Call (999) 988-866 for a quote." />
+<style>
+  :root{
+    --red:#a6192e; --red-dark:#7d1121; --ink:#1d2126; --char:#26292f;
+    --gray:#5d646e; --line:#e4e6e9; --bg:#f5f6f7; --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:var(--ink);background:var(--white);line-height:1.55}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+  /* Top bar */
+  .topbar{background:var(--char);color:#d7dae0;font-size:.85rem}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px;gap:12px;flex-wrap:wrap}
+  .topbar a{color:#fff;font-weight:600}
+  .topbar .tb-right{display:flex;gap:18px;flex-wrap:wrap}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 1px 10px rgba(0,0,0,.05)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{width:58px;height:58px;object-fit:contain;border-radius:50%}
+  .brand .bname{line-height:1.12}
+  .brand .bname strong{display:block;font-size:1.16rem;letter-spacing:.4px}
+  .brand .bname strong span{color:var(--red)}
+  .brand .bname small{color:var(--gray);font-size:.72rem;letter-spacing:2.2px;text-transform:uppercase}
+  .links{display:flex;gap:28px;align-items:center}
+  .links a{font-weight:600;font-size:.95rem;color:var(--char)}
+  .links a:hover{color:var(--red)}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:11px 22px;border-radius:8px;border:0;cursor:pointer;font-size:.95rem;transition:background .15s}
+  .btn:hover{background:var(--red-dark)}
+  .btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+  .btn.ghost:hover{background:rgba(255,255,255,.14)}
+  .btn.dark{background:var(--char)}
+  .btn.dark:hover{background:#111}
+  @media(max-width:820px){.links a:not(.btn){display:none}}
+
+  /* Hero */
+  .hero{position:relative;color:#fff;background:#14161a}
+  .hero .bg{position:absolute;inset:0;background:url("assets/hero.jpg") center/cover no-repeat;opacity:.92}
+  .hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,12,.82) 0%,rgba(10,10,12,.55) 46%,rgba(10,10,12,.05) 78%)}
+  .hero .wrap{position:relative;padding:96px 20px 104px}
+  .hero .kicker{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;border-radius:4px;margin-bottom:18px}
+  .hero h1{font-size:2.9rem;line-height:1.08;max-width:640px;font-weight:800}
+  .hero h1 span{color:#ff5b74}
+  .hero p{margin:18px 0 30px;max-width:520px;font-size:1.08rem;color:#e8eaee}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:640px){.hero h1{font-size:2.1rem}.hero .wrap{padding:64px 20px 72px}}
+
+  /* Trust strip */
+  .strip{background:var(--red);color:#fff}
+  .strip .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:16px;padding-bottom:16px}
+  .strip div{font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:9px}
+  .strip .dot{opacity:.75}
+
+  /* Sections */
+  section{padding:74px 0}
+  .eyebrow{color:var(--red);font-weight:800;letter-spacing:2.4px;font-size:.78rem;text-transform:uppercase;text-align:center}
+  h2{font-size:2rem;text-align:center;margin:8px 0 10px;font-weight:800}
+  .sub{text-align:center;color:var(--gray);max-width:640px;margin:0 auto 44px}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:14px;padding:32px 26px;background:#fff;transition:box-shadow .15s,transform .15s}
+  .card:hover{box-shadow:0 14px 34px rgba(20,20,30,.10);transform:translateY(-3px)}
+  .card .ico{width:56px;height:56px;border-radius:12px;background:#fbe9ec;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:16px}
+  .card h3{font-size:1.22rem;margin-bottom:9px}
+  .card p{color:var(--gray);font-size:.96rem}
+  .card ul{margin:14px 0 0 18px;color:var(--gray);font-size:.94rem}
+  .card ul li{margin:5px 0}
+
+  /* About */
+  .about{background:var(--bg)}
+  .about .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+  @media(max-width:900px){.about .grid{grid-template-columns:1fr}}
+  .about h2,.about .eyebrow{text-align:left}
+  .about p{color:var(--gray);margin-bottom:14px}
+  .about .points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .about .point{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+  .about .point strong{display:block;font-size:1.02rem;margin-bottom:3px}
+  .about .point span{color:var(--gray);font-size:.9rem}
+  .about .logoCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px;text-align:center}
+  .about .logoCard img{width:230px;height:230px;object-fit:contain;margin:0 auto;border-radius:50%}
+  .about .logoCard p{margin-top:14px;font-weight:700;color:var(--char)}
+  .about .logoCard small{color:var(--gray)}
+
+  /* Coverage band */
+  .coverage{background:var(--char);color:#fff;text-align:center}
+  .coverage h2{color:#fff}
+  .coverage .sub{color:#c9cdd4}
+  .cov{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  .cov span{border:1px solid #454a53;border-radius:999px;padding:9px 18px;font-weight:600;font-size:.93rem;background:#2c3037}
+
+  /* Quote / contact */
+  .quote .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+  @media(max-width:900px){.quote .grid{grid-template-columns:1fr}}
+  .quote h2,.quote .eyebrow{text-align:left}
+  .contactCard{background:var(--char);color:#fff;border-radius:16px;padding:30px}
+  .contactCard h3{font-size:1.25rem;margin-bottom:16px}
+  .contactCard .row{display:flex;gap:12px;margin:13px 0;color:#dfe2e8}
+  .contactCard .row b{color:#fff}
+  .contactCard .phoneBig{font-size:1.5rem;font-weight:800;color:#fff}
+  form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}
+  form h3{font-size:1.25rem;margin-bottom:18px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.frow{grid-template-columns:1fr}}
+  label{display:block;font-size:.85rem;font-weight:600;margin:0 0 6px;color:var(--char)}
+  input,textarea,select{width:100%;border:1px solid #cfd3d9;border-radius:8px;padding:11px 12px;font:inherit;font-size:.95rem;background:#fff}
+  input:focus,textarea:focus,select:focus{outline:2px solid rgba(166,25,46,.35);border-color:var(--red)}
+  .field{margin-bottom:14px}
+  form .btn{width:100%;padding:13px;font-size:1rem}
+  .ok{display:none;background:#e9f7ee;border:1px solid #bfe6cd;color:#14532d;border-radius:10px;padding:14px 16px;margin-top:14px;font-size:.94rem}
+
+  /* Footer */
+  footer{background:#14161a;color:#aeb4bd;padding:44px 0 26px;font-size:.92rem}
+  footer .cols{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:26px}
+  footer strong{color:#fff}
+  footer a:hover{color:#fff}
+  footer .fine{border-top:1px solid #2a2e35;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#7d838d;font-size:.84rem}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>📍 Brampton, Ontario</div>
+    <div class="tb-right">
+      <span>Mon–Sat Dispatch</span>
+      <span>Call us: <a href="tel:+1999988866">(999) 988-866</a></span>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="Freight Zone Transportation Inc logo" />
+      <span class="bname">
+        <strong>FREIGHT <span>ZONE</span></strong>
+        <small>Transportation Inc</small>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#quote">Contact</a>
+      <a class="btn" href="tel:+1999988866">📞 (999) 988-866</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="bg"></div>
+  <div class="shade"></div>
+  <div class="wrap">
+    <span class="kicker">Brampton · Canada &amp; USA</span>
+    <h1>Reliable Freight.<br />Delivered <span>On Time.</span></h1>
+    <p>Freight Zone Transportation Inc is a Brampton-based trucking company moving full truckloads across Canada and the United States — long-haul, cross-border and local, done right.</p>
+    <div class="cta">
+      <a class="btn" href="#quote">Request a Quote</a>
+      <a class="btn ghost" href="tel:+1999988866">📞 Call (999) 988-866</a>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div>🚛 Full Truckload (FTL)</div>
+    <div><span class="dot">•</span> 🇨🇦 Canada – USA Cross-Border 🇺🇸</div>
+    <div><span class="dot">•</span> 📦 Dry Van Freight</div>
+    <div><span class="dot">•</span> ⏱️ On-Time Delivery</div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2>Our Services</h2>
+    <p class="sub">Three core services, one standard: your freight picked up and delivered safely, on schedule, with clear communication at every step.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">🛣️</div>
+        <h3>Long-Haul Trucking</h3>
+        <p>Full truckload service over long distances across Canada and the continental United States.</p>
+        <ul>
+          <li>Full truckload (FTL) dry van</li>
+          <li>Coast-to-coast Canadian lanes</li>
+          <li>Scheduled &amp; dedicated runs</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico">🌎</div>
+        <h3>Cross-Border (Canada–USA)</h3>
+        <p>Canada–US freight moved with the paperwork and timing cross-border shipping demands.</p>
+        <ul>
+          <li>Canada ↔ USA full truckloads</li>
+          <li>Customs-ready documentation support</li>
+          <li>Regular cross-border lanes</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico">🏙️</div>
+        <h3>Local &amp; Regional</h3>
+        <p>Fast, flexible local cartage across the Greater Toronto Area and regional Ontario deliveries.</p>
+        <ul>
+          <li>GTA same-day &amp; next-day options</li>
+          <li>Regional Ontario routes</li>
+          <li>Flexible pickup windows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">About Us</div>
+        <h2>Freight Zone Transportation Inc</h2>
+        <p>Based in Brampton, Ontario, Freight Zone Transportation Inc is a full-service trucking company built on dependable equipment, professional drivers and honest communication. From a single local load to regular cross-border lanes, we treat every shipment like it is our own.</p>
+        <p>Shippers choose us because we keep it simple: fair rates, realistic schedules, and a dispatch team that answers the phone.</p>
+        <div class="points">
+          <div class="point"><strong>⏱️ On-Time Focus</strong><span>Schedules we commit to, we keep.</span></div>
+          <div class="point"><strong>🛂 Border Expertise</strong><span>Cross-border loads without the headaches.</span></div>
+          <div class="point"><strong>📞 Direct Communication</strong><span>Talk to dispatch, not a call centre.</span></div>
+          <div class="point"><strong>💲 Competitive Rates</strong><span>Straightforward pricing, no surprises.</span></div>
+        </div>
+      </div>
+      <div class="logoCard">
+        <img src="assets/logo.png" alt="Freight Zone Transportation Inc" />
+        <p>Freight Zone Transportation Inc</p>
+        <small>Brampton, Ontario, Canada</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coverage" id="coverage">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#ff8296">Where We Run</div>
+    <h2>Coverage</h2>
+    <p class="sub">Headquartered in Brampton, we run regular lanes throughout Canada and the continental United States.</p>
+    <div class="cov">
+      <span>Ontario</span><span>Quebec</span><span>Maritimes</span><span>Prairies</span>
+      <span>British Columbia</span><span>US Midwest</span><span>US Northeast</span><span>US South</span>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Request a Quote</h2>
+        <p style="color:var(--gray);margin-bottom:20px">Tell us where your freight is going and our dispatch team will get back to you with a rate. Prefer to talk? Call us directly.</p>
+        <div class="contactCard">
+          <h3>Contact Dispatch</h3>
+          <div class="row">📞 <span>Phone<br /><a class="phoneBig" href="tel:+1999988866">(999) 988-866</a></span></div>
+          <div class="row">📍 <span>Location<br /><b>Brampton, Ontario, Canada</b></span></div>
+          <div class="row">🕒 <span>Hours<br /><b>Dispatch: Monday – Saturday</b></span></div>
+        </div>
+      </div>
+      <form id="quoteForm">
+        <h3>Quote Request</h3>
+        <div class="frow">
+          <div class="field"><label for="qname">Your Name *</label><input id="qname" required placeholder="Full name" /></div>
+          <div class="field"><label for="qphone">Phone *</label><input id="qphone" required placeholder="(___) ___-____" /></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="qfrom">Pickup City *</label><input id="qfrom" required placeholder="e.g. Brampton, ON" /></div>
+          <div class="field"><label for="qto">Delivery City *</label><input id="qto" required placeholder="e.g. Chicago, IL" /></div>
+        </div>
+        <div class="field"><label for="qservice">Service Needed</label>
+          <select id="qservice">
+            <option>Long-Haul</option><option>Cross-Border (Canada–USA)</option><option>Local / Regional</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="qdetails">Load Details</label><textarea id="qdetails" rows="4" placeholder="Weight, commodity, pickup date, anything else we should know"></textarea></div>
+        <button class="btn" type="submit">Send Quote Request</button>
+        <div class="ok" id="quoteOk">✅ Thank you! Your request has been noted. For the fastest response, call dispatch at <b>(999) 988-866</b>.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong>Freight Zone Transportation Inc</strong><br />
+        Brampton, Ontario, Canada<br />
+        Long-haul · Cross-border · Local
+      </div>
+      <div>
+        <strong>Quick Links</strong><br />
+        <a href="#services">Services</a><br />
+        <a href="#about">About</a><br />
+        <a href="#quote">Request a Quote</a>
+      </div>
+      <div>
+        <strong>Contact</strong><br />
+        📞 <a href="tel:+1999988866">(999) 988-866</a><br />
+        📍 Brampton, ON
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Freight Zone Transportation Inc. All rights reserved.</span>
+      <span>Freight Zone Transportation Inc — Brampton, ON</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("quoteForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    document.getElementById("quoteOk").style.display = "block";
+    this.reset();
+    document.getElementById("quoteOk").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+</script>
+</body>
+</html>
